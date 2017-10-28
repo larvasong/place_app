@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>setting-Segments</ion-title>
+  </ion-navbar>
+
+  <!-- <ion-toolbar no-border-top> -->
+  <ion-toolbar no-border-top *ngIf="userInfo">
+    <ion-segment [(ngModel)]="setFlag">
+      <ion-segment-button value="myInfo">
+        My Info
+      </ion-segment-button>
+      <ion-segment-button value="follow">
+        Follow
+      </ion-segment-button>
+      <ion-segment-button value="like">
+        Like
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <page-login *ngIf="!userInfo"> </page-login>
+
+  <!-- <div [ngSwitch]="setFlag"> -->
+  <div [ngSwitch]="setFlag" *ngIf="userInfo">
+    <page-my-info *ngSwitchCase="'myInfo'" [userInfo]="userInfo"> </page-my-info>
+    <page-my-follow *ngSwitchCase="'follow'"></page-my-follow>
+    <page-my-like *ngSwitchCase="'like'"></page-my-like>
+  </div>
+
+</ion-content>

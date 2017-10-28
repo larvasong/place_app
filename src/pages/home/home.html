@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="cards-bg">
+  <place [item]="item"
+    *ngFor="let item of placeCollection ; trackBy:trackByFunction">
+  </place>
+</ion-content>

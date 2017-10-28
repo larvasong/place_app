@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>person info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <img [src]="item.avatar"/>
+    </ion-item>
+
+    <ion-item>
+      <!-- <ion-label floating>User Name</ion-label> -->
+      {{item.name}}
+    </ion-item>
+
+    <ion-item>
+      <!-- <ion-label floating>User Description</ion-label> -->
+      {{item.desc}}
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Birth Day</ion-label>
+      <ion-datetime (change)="chgBirthDay()" displayFormat="YYYY-MM-DD" [(ngModel)]="item.birthDay"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="item.gender">
+        <ion-option value="f">Female</ion-option>
+        <ion-option value="m">Male</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='logo-twitter' item-left style="color: #55acee"></ion-icon>
+      Followers
+      <ion-badge item-right>260k</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

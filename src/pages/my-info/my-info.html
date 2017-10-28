@@ -1,0 +1,35 @@
+<ion-list>
+  <ion-item>
+    <img src="assets/img/IMG_0349.jpg"/>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>User Name</ion-label>
+    <ion-input type="text"></ion-input>
+    <!-- <ion-input type="text" [(ngModel)]="userInfo.name"></ion-input> -->
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>User Description</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Birth Day</ion-label>
+    <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.timeEnds"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select [(ngModel)]="gender">
+      <ion-option value="f">Female</ion-option>
+      <ion-option value="m">Male</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name='logo-twitter' item-left style="color: #55acee"></ion-icon>
+    Followers
+    <ion-badge item-right>260k</ion-badge>
+  </ion-item>
+</ion-list>

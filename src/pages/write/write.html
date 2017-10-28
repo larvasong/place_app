@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      장소등록
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <img [src]="placeItem.images" *ngIf="placeItem.images" />
+    </ion-card-content>
+
+    <ion-item>
+      <button ion-button icon-left clear item-left (click)="accessCamera()">
+        <ion-icon name="camera"></ion-icon>카메라
+      </button>
+      <button ion-button icon-left clear item-right (click)="accessGallery()">
+        <ion-icon name="image"></ion-icon>갤러리
+      </button>
+    </ion-item>
+  </ion-card>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>장소명칭</ion-label>
+      <ion-input type="text" [(ngModel)]="placeItem.placeName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>주소</ion-label>
+      <ion-input type="text" [(ngModel)]="placeItem.address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>gps point</ion-label>
+      <ion-input type="text" [(ngModel)]="placeItem.latitude"></ion-input>
+      <ion-input type="text" [(ngModel)]="placeItem.longitude"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>제목</ion-label>
+      <ion-input type="text" [(ngModel)]="placeItem.subject"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>설명</ion-label>
+      <ion-textarea
+        [(ngModel)]="placeItem.desc">
+      </ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button color="primary" block (click)="save()">Save</button>
+
+</ion-content>

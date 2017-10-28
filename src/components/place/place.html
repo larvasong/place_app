@@ -1,0 +1,42 @@
+<ion-card>
+  <ion-item (click)="viewUserDetail(item.user)">
+    <ion-avatar item-left>
+      <img [src]="item.user.avatar"/>
+    </ion-avatar>
+    <h2>{{item.user.name}}</h2>
+    <p>{{item.user.desc}}</p>
+    <ion-note item-right>
+      {{item.writeTime}}
+    </ion-note>
+  </ion-item>
+
+  <div (click)="openPlacePage(item)">
+    <img [src]="item.images"/>
+
+    <ion-card-content>
+      <p>{{item.subject}}</p>
+    </ion-card-content>
+  </div>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>{{item.likeCnt}} Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>{{item.commentCnt}} Comments</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small color="primary"
+        (click)="openMapApp(item.latitude, item.longitude)">
+        <ion-icon name='navigate'></ion-icon>
+        <div>Start</div>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-card>
